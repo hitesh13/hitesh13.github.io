@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  min-height: 10vh;
+  /* background: #5d4954; */
+  background: black;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+}
+
+.logo {
+  color: rgb(216, 215, 215);
+  letter-spacing: 3px;
+  font-size: 20px;
+  margin-left: 5%;
+}
+
+.nav-links {
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+  /* margin-left: auto; */
+}
+
+.links {
+  transition: all 0.5s ease;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.links {
+  color: rgb(216, 215, 215);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: rgb(216, 215, 215);
+  margin: 5px;
+  transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 1000px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 728px) {
+  .body {
+    overflow-x: hidden !important;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 15vh;
+    top: 10vh;
+    background: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    transform: translatey(-100%);
+    z-index: -1;
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translatey(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+main > section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#home {
+  background-color: peachpuff;
+}
+#about {
+  background-color: azure;
+}
+#work {
+  background-color: burlywood;
+}
